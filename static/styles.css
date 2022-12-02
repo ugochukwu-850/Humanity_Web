@@ -1,1 +1,8 @@
 /*CSS FOR HUMANITY WEB*/
+
+header{
+    color: black;
+    background-blend-mode: color;
+    font: 100;
+    margin: 4em;
+}
