@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, request
 
 from cs50 import SQL
 
+
 #configure application
 app = Flask(__name__)
 
