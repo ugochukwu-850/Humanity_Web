@@ -1,0 +1,39 @@
+body
+{
+    margin-left: 0;
+}
+.navbar{
+    margin-top: -8px;
+    display: block;
+    text-align: center;
+    background-color: rgba(254, 165, 225, 0.9);
+    padding: 10px;
+    margin-right: -8px;
+    border-block: 1px white;
+    border-radius: 2px;
+    color: aliceblue;
+    padding-bottom: 20px;
+}
+.navbar a{
+    margin: 2px 125px;
+    padding: 14px 16px;
+}
+
+a img{
+    border-radius: 10px;
+    box-shadow: inset;
+    float: none;
+    margin-bottom: -10px;
+}
+a i{
+
+    border-radius: 10px;
+    box-shadow: inset;
+    float: none;
+    margin-bottom: -10px;
+}
+.navbar a:hover{
+    margin: 2px 125px;
+    padding: 14px 16px;
+    background-color: rgba(124, 28, 32, 0.2);
+}
