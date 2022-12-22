@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="main-comtent">
+        <div class="welcome">
+            <h2>welcome To The <span>Humanity Web </span></h2>
+            <p>Share your feelings about the future...</p>
+            <p>Share your ideas on technologies of the future</p>
+        </div>
+        <div class="login-card">
+            <div class="logo">
+                <img src="static/Note.png" alt="Humanity web logo" style="width: 60px;">
+            </div>
+            <p style="color:white; font-size:1.5em;">Login</p>
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Input your username">
+                <br>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <br>
+                <input type="submit" value="Login">
+            </form>
+            <a href="/register">Register</a>
+            <a href="#" >Forgot Password</a>
+        </div>
+    </div>
+
+</body>
+</html>

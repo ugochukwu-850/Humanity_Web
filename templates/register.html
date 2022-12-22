@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/login.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="main-comtent">
+        <div class="welcome">
+            <h2>welcome To The <span>Humanity Web </span></h2>
+            <p>Share your feelings about the future...</p>
+            <p>Share your ideas on technologies of the future</p>
+        </div>
+        <div class="login-card">
+            <div class="logo">
+                <img src="static/Note.png" alt="Humanity web logo" style="width: 60px;">
+            </div>
+            <p style="color:white; font-size:1.5em;">Register</p>
+            <form action="/register" method="post" enctype=multipart/form-data>
+                <label for="inputTag" style="color: white;">
+                    Add Profile picture 
+                    <input type="file" name="profilepic" id="displaypic" value="Add profile photo">
+                    Add cover photo
+                    <input type="file" name="coverpic" id="coverpic" value="Add cover photo">
+                </label>
+                <input type="text" name="fullname" id="" placeholder="Input your fullname">
+                <input type="text" name="username" placeholder="Input your username">
+                <input type="text" name="nickname" placeholder="Input your Nickname">
+                <br>
+                
+                <input type="text" name="quote" placeholder="Input your life quote" maxlength="35">
+                <input type="text" name="address" placeholder="Add email address">
+                <br>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="password" name="confirm" id="confirm" placeholder="Confirm password">
+                <br>
+                <input type="submit" value="Register">
+            </form>
+            <a href="/login">Login</a>
+            <a href="#">Feedback</a>
+        </div>
+    </div>
+
+</body>
+</html>

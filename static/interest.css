@@ -5,21 +5,11 @@ body
     color: aliceblue;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.rows{
+    display: grid;
+}
 
-.main-heading{
-    border: 1px beige;
-    border-radius: 5px;
-    border-collapse: collapse;
-    border-style: outset;
-    margin: 10px;
-    padding: 3px;
-}
-#Home{
-    margin: 0;
-    margin-bottom: 15px;
-    color: white;
-    border: none;
-}
+
 #profile img{
     width: 60px;
     border-radius: 50%;
@@ -50,11 +40,12 @@ body
 .col2{
 
     padding: 15px;
+
+    font: bolder;
     border-top-style: none;
     border-bottom-style: none;
     border-left-style: solid;
     border-right-style:solid ;
-    font: bolder;
     overflow-x: hidden;
     background-color: rgb(15, 14, 14);
 
@@ -63,119 +54,6 @@ body
 
     padding: 15px;
     overflow-x: scroll;
-
-
-    
-}
-#post{
-    border-top: 0px;
-    border-right: 0px;
-    border-left: 0px;
-    border-bottom: 2em ;
-    color: rgb(77, 75, 56);
-    padding: 7px;
-    margin: 5px;
-    height: 40px;
-    border-bottom: 1px #707070;
-    width: 75%;
-    background-color:inherit;
-    text-align: start;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;
-    border-bottom-style: solid;
-
-}
-#post:focus{
-    background: #f6f6f6;
-    border: 1px;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;
-    border-bottom-style: solid;
-
-}
-.post-card-name{
-    border: #16181C;
-    border-radius: 12px;
-    color: #b9c4dc;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 7px;
-    background-color:rgba(28, 29, 31, 0.5);
-    padding: 5px 7px;
-    width: 90%;
-}
-.post-btn {
-    background-color: aqua;
-    border: none;
-    width: 20%;
-    border-radius: 15px;
-    height: 40px;
-}
-#post-form{
-    margin-top: 2px;
-    margin-left: 3px;
-    margin-bottom: 40px;
-    padding: 1px;
-
-}
-#Posts-cards{
-    margin: 10px;
-    padding: 14px 16px;
-    margin-top: 40px;
-    border: 1px solid #707070;
-    border-radius: 10px;
-    display: block;
-    background-color:rgba(28, 29, 31, 0.5);
-    color: rgb(95, 92, 87)
-}
-#username-post{
-    margin-left: 2px;
-    padding: 1px;
-}
-#user-link{
-    font-stretch: expanded;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: oblique;
-    font: bolder;
-    font-size: smaller;
-}
-#dp{
-    width: 60;
-    height: auto;
-    border-radius: 45%;
-}
-#post-image{
-    border-radius: 8px;
-    margin: 2px;
-    width: 100%;
-    height: auto;
-}
-#username{
-    margin-top: -4px;
-}
-#post-text{
-    margin-top: 2px;
-    margin-left: 3px;
-}
-#time-stamp{
-    padding: 1px;
-    margin: 2px;
-    font-size: smaller;
-    text-align: end;
-}
-.footer a{
-    font-size: larger;
-    font-weight: bold;
-    text-decoration: none;
-    color: #8e2525;
-    lighting-color: #e9b3b3;
-
-}
-.footer{
-    margin: 7px;
-    padding: 50px;
-    text-align: center;
 }
 
 /*side first column design*/
@@ -241,8 +119,6 @@ button:hover{
 }
 a{
     cursor: pointer;
-    color: white;
-    text-decoration: none;
 }
 
 /* Chat pane */
@@ -305,21 +181,54 @@ img{
 td:hover{
     background-color: rgba(28, 29, 31, 0.9)
 }
-/*touches extras*/
-input[type=file]::file-selector-button {
-    margin: 5px 4px 5px 0;
-    border: 1px ridge black;
-    background: #084cdf;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #fff;
+/*======Design For the main-content for the Profile image ====*/
+/*=====Design for the post card*/
+.post-card-name{
+    border: #16181C;
+    border-radius: 12px;
+    color: #b9c4dc;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 7px;
+    background-color:rgba(28, 29, 31, 0.5);
+    padding: 5px 7px;
+    width: 90%;
+}
+#dp{
+    width: 60;
+    height: auto;
+    border-radius: 45%;
+}
+#username-post{
+    margin-left: 2px;
+    padding: 1px;
+}
+#post-text{
+    margin-top: 2px;
+    margin-left: 3px;
+}
+#post-image{
+    border-radius: 8px;
+    margin: 2px;
+    width: 100%;
+    height: auto;
+}
+#time-stamp{
+    padding: 1px;
+    margin: 2px;
+    font-size: smaller;
+    text-align: end;
+}
+.note-post{
+    margin: 2px;
+    padding: 3px;
+    border-style: ridge;
+    border-radius: 4px;
+    border-color: #e9b3b3;
+}
+/*Done*/
+a{
     cursor: pointer;
-    transition: background .2s ease-in-out;
-    text-align: center;
-    font: 600;
-    display: inline-flex;
-  }
-  
-  input[type=file]::file-selector-button:hover {
-    background: #1e50a6;
-  }
+    color: white;
+    text-decoration: none;
+}
+/*Done*/

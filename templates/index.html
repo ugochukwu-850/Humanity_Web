@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>History Web: Home</title>
+
+</head>
+
+<body>
+    <div class="rows">
+        <!--Seperate the page to three-->
+        <div class="col1">
+            <!--The side navbar-->
+            <p id="logo"><img src="/static/Note.png" alt="History" style="width: 50px;"></p>
+            <hr>
+            <ul>
+                <li><span><i class="fa fa-home" style="font-size:28px" ;></i></span><a href="/">Home</a></li>
+                <li><span><i class="fa fa-user" style="font-size:28px" ;></i></span><a href="/profile"
+                        style="margin-left: 30px;">Profile</a></li>
+                <li><span><i class="fa fa-bell" style="font-size:28px" ;></i></span> <a
+                        href="/notifications">Notifications</a></li>
+                <li><span><i class="fa fa-comment" style="font-size:28px" ;></i></span> <a href="#">Comments</a></li>
+                <li><span><i class="fa fa-bars" style="font-size:28px" ;></i></span> <a href="/interest">Interest</a>
+                </li>
+                <li><span><i class="fa fa-th" style="font-size:28px" ;></i></span> <a href="#">Tools</a></li>
+
+                <li><span><i class="fa fa-modx" style="font-size:28px" ;></i></span> <a href="/logout">Logout</a></li>
+
+                <a href="/" style="font-weight:bolder"> <button>Speak</button></a>
+            </ul>
+
+            <div id="profile">
+                <span id="dp"><a href="#"><img src="/static/cs503.jpg" alt="DP"></a></span>
+                <span id="username">Username Ugochukwu </span>
+                <br>
+                <span id="user-link">"I percieve the universe as a sweet melody of creation"</span>
+            </div>
+        </div>
+        <!--Done with side navbar-->
+        <div class="col2">
+            <!--Main content-->
+            <div class="main_heading">
+                <section id="Home">
+                    <span><b>Dark mode</b></span>
+                    <span id="icon" style="float:right"><b>$</b></span>
+                </section>
+                <section id="post-form">
+                    <img src="{{dp_path}}" alt="DP" id="dp">
+                    <form action="/" method="post" enctype=multipart/form-data>
+                        <input type="text" name="Post" id="post" placeholder="Express your thoughts!!!" maxlength="2000"
+                            minlength="5">
+                        <input type="file" name="post_image" id="" accept="image/*">
+                        <!---->
+                        <input type="submit" value="Post" class="post-btn">
+                    </form>
+                </section>
+            </div>
+            <hr id="card-line">
+            {% if  data %}
+            {% for value in data  %}
+            {% if value.image_path %}
+            <section id="Posts-cards">
+                <div class="post-card-name">
+                    <span id="dp"><img src="{{value.dp_path}}" alt="DP"><span id="username-post">{{value.username}}</span></span>
+                    <p id="post-text">{{value.post}}</p>
+                </div>
+                <img src="{{value.image_path}}" alt="post-image" id="post-image">
+                <p id="time-stamp">{{value.time}}</p>
+            </section>
+            {% else %}
+
+            <!--Example of multiple Posts-->
+            <section id="Posts-cards">
+                <div class="post-card-name">
+                    <span id="dp"><img src="{{value.dp_path}}" alt="DP"><span id="username-post">{{value.username}}</span></span>
+                    <p id="post-text">{{value.post}}</p>
+                </div>
+                <p id="time-stamp">{{value.time}}</p>
+            </section>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            <!--done-->
+
+            <div class="footer">
+                <a href="#">History Web</a>
+            </div>
+        </div>
+        <!--Done with main content-->
+        <div class="col3">
+
+            <div id="chat-user">
+
+
+                <!--Messages feedback and any ideas from Miracle-->
+                <form action="#" method="post">
+                    <input type="text" name="search-chat" placeholder="Search" minlength="10">
+                    <!--implement with json-->
+                </form>
+                <table>
+                    <thead>
+                        <th>
+                            <h2> Chats</h2>
+
+                        </th>
+                    </thead>
+                        <tr>
+                            <td>
+                                <a href="/messages" > <div class="chat">
+                                <img src="/static/cs503.jpg" alt="Chats_rec img" id="dp">
+                                <span>Chats name</span>
+                                <p style="font-size:.8rem;">Status:</p>
+                                </div>
+                            </a>
+                            </td>
+
+                        </tr>
+
+                </table>
+                <p
+                    style="display:block; text-align:center; color:darkgray; font-family:'Times New Roman', Times, serif; font-style:italic">
+                    Powered By ZG Aspire L
+                </p>
+            </div>
+            <!--Done with Message pane-->
+        </div>
+</body>
+
+</html>

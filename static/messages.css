@@ -1,0 +1,436 @@
+body
+{
+    margin:0;
+    background-color: black;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.rows{
+    display: grid;
+}
+
+
+#profile img{
+    width: 60px;
+    border-radius: 50%;
+}
+#dp{
+    width: 60px;
+    height: auto;
+    border-radius: 40%;
+}
+
+/* Clear floats after the columns */
+.rows{
+    height: 100vh;
+   
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas:
+    "bowl content content2";
+    border-right: 2px #8e2525;    
+    
+}
+.col1{
+    padding: 15px;
+    border: 5px white;
+    border-width: 4px;
+    border-color: #e9b3b3;
+}
+.col2{
+
+    padding: 15px;
+
+    font: bolder;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-left-style: solid;
+    border-right-style:solid ;
+    overflow-x: hidden;
+    background-color: rgb(15, 14, 14);
+
+}
+.col3{
+
+    padding: 15px;
+    overflow-x: scroll;
+}
+
+/*side first column design*/
+ul{
+    list-style-type: none;
+    margin-left: -40px;
+}
+#logo{
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+li a{
+    text-decoration: none;
+    color: #f6f6f6;
+    font-size: 1.5rem;
+    margin-left: 25px;
+}
+li{
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+li:hover{
+    background-color: rgba(225, 230, 255, .1)
+}
+li:last-child{
+    margin-top: 200px;
+    margin-left: 0px;
+}
+button{
+    width: 100%;
+    align-self: center;
+    font-size: larger;
+    margin-top: 30px;
+    height: 40px;
+    border: 2px #707070;
+    border-radius: 15px;
+    background-color: rgba(60, 120, 1800, .9);
+}
+#profile{
+    margin-top: auto;
+    padding: 14px 16px;
+    background-color: #16181C;
+    border-radius: 10px;
+    border-color: #707070;
+    color: #e9b3b3;
+    width: auto;
+    height: auto;
+    box-shadow: 2px blue;
+}
+button:hover{
+    background-color: rgba(0, 128, 255, 0.9);
+    font-weight: bolder;
+    zoom: normal;
+    cursor: pointer;
+}
+#card-line{
+    margin-left:-13px;
+    margin-right:-13px;
+    margin-top: 7px;
+    margin-bottom: -5px;
+    height: .01px;
+}
+a{
+    cursor: pointer;
+}
+
+/* Chat pane */
+#chat-user span{
+    font:bolder;
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 2px;
+}
+#chat-user input[type=text]{
+    border: #16181C;
+    border-radius: 40px;
+    height: 40px;
+    margin-top: 5px;
+    width: 88%;
+    padding: 0px 14px;
+    margin-left: 8px;
+    margin-bottom: -8px;
+    background-color: #16181C;
+}
+#chat-user input[type=text]:hover{
+    border: #16181C;
+    border-radius: 45px;
+    border-color: #707070;
+    height: 45px;
+    margin-top: 5px;
+    width: 88%;
+    padding: 0px 14px;
+    margin-left: 8px;
+    margin-bottom: -8px;
+    background-color: #16181C;   
+}
+table{
+    background-color: #16181C;;
+    border: rgb(22, 24, 28);
+    border-radius: 12px;
+    width: 98%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: -20px;
+    max-height: 50%;
+}
+th{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
+    border-bottom: 2px;
+}
+tr{
+    overflow-wrap: break-word;
+    margin-bottom: 2px;
+    margin-left: 14px;
+    padding: 14px 24px;
+}
+img{
+    width: 60px;
+    border: #16181C;
+    border-radius: 8px;
+}
+td:hover{
+    background-color: rgba(28, 29, 31, 0.9)
+}
+/*======Design For the main-content for the Profile image ====*/
+.note-card{
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid brown;
+    width: 90%;
+    padding: 14px 20px;
+    color: white;
+    font-size: medium;
+}
+.note-card:hover{
+    padding: 16px 22px;
+    background-color: #16181C;
+    color: whitesmoke;
+    font-size: larger;
+}
+.note-card span{
+    font: bolder;
+}
+.note-card a{
+    text-decoration-style: none;
+    text-decoration: none;
+    color: white;
+}
+body
+{
+    margin:0;
+    background-color: black;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.rows{
+    display: grid;
+}
+
+
+#profile img{
+    width: 60px;
+    border-radius: 50%;
+}
+#dp{
+    width: 60px;
+    height: auto;
+    border-radius: 40%;
+}
+
+/* Clear floats after the columns */
+.rows{
+    height: 100vh;
+   
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas:
+    "bowl content content2";
+    border-right: 2px #8e2525;    
+    
+}
+.col1{
+    padding: 15px;
+    border: 5px white;
+    border-width: 4px;
+    border-color: #e9b3b3;
+}
+.col2{
+
+    padding: 15px;
+
+    font: bolder;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-left-style: solid;
+    border-right-style:solid ;
+    overflow-x: hidden;
+    background-color: rgb(15, 14, 14);
+
+}
+.col3{
+
+    padding: 15px;
+    overflow-x: scroll;
+}
+
+/*side first column design*/
+ul{
+    list-style-type: none;
+    margin-left: -40px;
+}
+#logo{
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+li a{
+    text-decoration: none;
+    color: #f6f6f6;
+    font-size: 1.5rem;
+    margin-left: 25px;
+}
+li{
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+li:hover{
+    background-color: rgba(225, 230, 255, .1)
+}
+li:last-child{
+    margin-top: 200px;
+    margin-left: 0px;
+}
+button{
+    width: 100%;
+    align-self: center;
+    font-size: larger;
+    margin-top: 30px;
+    height: 40px;
+    border: 2px #707070;
+    border-radius: 15px;
+    background-color: rgba(60, 120, 1800, .9);
+}
+#profile{
+    margin-top: auto;
+    padding: 14px 16px;
+    background-color: #16181C;
+    border-radius: 10px;
+    border-color: #707070;
+    color: #e9b3b3;
+    width: auto;
+    height: auto;
+    box-shadow: 2px blue;
+}
+button:hover{
+    background-color: rgba(0, 128, 255, 0.9);
+    font-weight: bolder;
+    zoom: normal;
+    cursor: pointer;
+}
+#card-line{
+    margin-left:-13px;
+    margin-right:-13px;
+    margin-top: 7px;
+    margin-bottom: -5px;
+    height: .01px;
+}
+a{
+    cursor: pointer;
+}
+
+/* Chat pane */
+#chat-user span{
+    font:bolder;
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 2px;
+}
+#chat-user input[type=text]{
+    border: #16181C;
+    border-radius: 40px;
+    height: 40px;
+    margin-top: 5px;
+    width: 88%;
+    padding: 0px 14px;
+    margin-left: 8px;
+    margin-bottom: -8px;
+    background-color: #16181C;
+}
+#chat-user input[type=text]:hover{
+    border: #16181C;
+    border-radius: 45px;
+    border-color: #707070;
+    height: 45px;
+    margin-top: 5px;
+    width: 88%;
+    padding: 0px 14px;
+    margin-left: 8px;
+    margin-bottom: -8px;
+    background-color: #16181C;   
+}
+table{
+    background-color: #16181C;;
+    border: rgb(22, 24, 28);
+    border-radius: 12px;
+    width: 98%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: -20px;
+    max-height: 50%;
+}
+th{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
+    border-bottom: 2px;
+}
+tr{
+    overflow-wrap: break-word;
+    margin-bottom: 2px;
+    margin-left: 14px;
+    padding: 14px 24px;
+}
+img{
+    width: 60px;
+    border: #16181C;
+    border-radius: 8px;
+}
+td:hover{
+    background-color: rgba(28, 29, 31, 0.9)
+}
+/*======Design For the main-content for the Profile image ====*/
+.chat-header{
+    margin: -14px -15px 15px -15px;
+    padding: 25px 18px;
+    background-color: rgb(80, 34, 80);
+    text-align: center;
+    color: rgb(207, 155, 59);
+}
+.messages{
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: ridge;
+    border-bottom-style: none;
+    border-color: #05389d;
+    margin: 4px -15px 1px -15px;
+    padding: 14px 14px;
+    border-collapse: collapse;
+}
+.messages p{
+    background-color: #d0d0d0;
+    opacity: .7;
+    margin:2px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    color: rgb(78, 102, 240);
+    border:  2px ridge rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.footer-mess{
+    border-top-style: ridge;
+    margin: 4px -15px 1px -15px;
+    border-color: #a8a8a8;
+}
+input[type=text]{
+    padding: 14px 16px;
+    margin: 4px -17px 1px -14px;
+    border: 1px ridge rgb(109, 109, 166) ;
+    border-radius: 12px;
+    width: 100%;
+}
+a{
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
