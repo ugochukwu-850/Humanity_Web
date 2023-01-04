@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/layout.css">
+    <link rel="stylesheet" href="/static/comments.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>History Web: Home</title>
 
@@ -24,7 +24,7 @@
                         style="margin-left: 30px;">Profile</a></li>
                 <li><span><i class="fa fa-bell" style="font-size:28px" ;></i></span> <a
                         href="/notifications">Notifications</a></li>
-                <li><span><i class="fa fa-comment" style="font-size:28px" ;></i></span> <a href="#">Comments</a></li>
+                <li><span><i class="fa fa-comment " style="font-size:28px;" ></i></span> <a href="#">Comments</a></li>
                 <li><span><i class="fa fa-bars" style="font-size:28px" ;></i></span> <a href="/interest">Interest</a>
                 </li>
                 <li><span><i class="fa fa-th" style="font-size:28px" ;></i></span> <a href="#">Tools</a></li>
@@ -44,37 +44,18 @@
         <!--Done with side navbar-->
         <div class="col2">
             <!--Main content-->
-            <div class="main_heading">
-                <section id="Home">
-                    <span><b>Dark mode</b></span>
-                    <span id="icon" style="float:right"><b>$</b></span>
-                </section>
-                <section id="post-form">
-                    <img src="{{dp_path}}" alt="DP" id="dp">
-                    <form action="/" method="post" enctype=multipart/form-data>
-                        <input type="text" name="Post" id="post" placeholder="Express your thoughts!!!" maxlength="2000"
-                            minlength="5">
-                        <input type="file" name="post_image" id="" accept="image/*">
-                        <!---->
-                        <input type="submit" value="Post" class="post-btn">
-                    </form>
-                </section>
-            </div>
+
             <hr id="card-line">
-            {% if  data %}
-            {% for value in data  %}
+            {% if data %}
+            {% for value in data %}
             {% if value.image_path %}
             <section id="Posts-cards">
                 <div class="post-card-name">
-                    <span id="dp"><img src="{{value.dp_path}}" alt="DP"><span id="username-post">{{value.username}}</span></span>
+                    <span id="dp"><img src="{{value.dp_path}}" alt="DP"><span
+                            id="username-post">{{value.username}}</span></span>
                     <p id="post-text">{{value.post}}</p>
                 </div>
                 <img src="{{value.image_path}}" alt="post-image" id="post-image">
-                <a href="/comments/{{value.post_id}}" style="text-decoration: none; list-style: none;">
-                    <div class="comment" style="text-align:center; color: white; border: 1px ridge white; border-radius: 15px;">
-                        Comment
-                     </div>
-                    </a>
                 <p id="time-stamp">{{value.time}}</p>
             </section>
             {% else %}
@@ -82,19 +63,34 @@
             <!--Example of multiple Posts-->
             <section id="Posts-cards">
                 <div class="post-card-name">
-                    <span id="dp"><img src="{{value.dp_path}}" alt="DP"><span id="username-post">{{value.username}}</span></span>
+                    <span id="dp"><img src="{{value.dp_path}}" alt="DP"><span
+                            id="username-post">{{value.username}}</span></span>
                     <p id="post-text">{{value.post}}</p>
                 </div>
-                <a href="/comments/{{value.post_id}}" style="text-decoration: none; list-style: none;">
-                <div class="comment" style="text-align:center; color: white; border: 1px ridge white; border-radius: 15px; margin: 4px;">
-                    Comment
-                 </div>
-                </a>
                 <p id="time-stamp">{{value.time}}</p>
             </section>
             {% endif %}
             {% endfor %}
             {% endif %}
+            <h3 style="font-weight:bolder; text-align:center; margin:12px; ">Comments</h3>
+            {% if comments%}
+            {% for comment in comments %}
+            <div class="comments">
+                <img src="{{comment.dp_path}}" alt="posters dp">
+                <strong>{{comment.username}}</strong>
+                <br>
+                <p>{{comment.comment}}</p>
+            </div>
+            {% endfor %}
+            {%else%}
+            <h4 style="text-align:center; color:aqua; font-weight:lighter; font-style:oblique; opacity:0.3;"> Are you the only one who
+                knows about this fact !!!!!!! <br> Be the first to shed more light</h4>
+            {% endif %}
+            <form action="/comments/{{post_id}}" method="post">
+                <input type="text" name="comment" placeholder="Input your comments here">
+                <input type="submit" value="Comment">
+            </form>
+
             <!--done-->
 
             <div class="footer">
@@ -119,17 +115,18 @@
 
                         </th>
                     </thead>
-                        <tr>
-                            <td>
-                                <a href="/messages" > <div class="chat">
-                                <img src="/static/cs503.jpg" alt="Chats_rec img" id="dp">
-                                <span>Chats name</span>
-                                <p style="font-size:.8rem;">Status:</p>
+                    <tr>
+                        <td>
+                            <a href="/messages">
+                                <div class="chat">
+                                    <img src="/static/cs503.jpg" alt="Chats_rec img" id="dp">
+                                    <span>Chats name</span>
+                                    <p style="font-size:.8rem;">Status:</p>
                                 </div>
                             </a>
-                            </td>
+                        </td>
 
-                        </tr>
+                    </tr>
 
                 </table>
                 <p

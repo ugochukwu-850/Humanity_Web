@@ -62,6 +62,7 @@
                 <hr>
                 {% if  data%}
                 {% for value in data %}
+                {% if value.image_path %}
                 <div class="interest-card">
                         <div class="post-card-name">
                         <span id="dp"><img src="{{value.dp_path}}" alt="DP"><span id="username-post">{{value.username}}</span></span>
@@ -70,6 +71,16 @@
                         <img src="{{value.image_path}}" alt="post-image" id="post-image">
                         <p id="time-stamp">Posted-on:{{value.time}}</p>
                 </div>
+                {% else %}
+                <div class="interest-card">
+                    <div class="post-card-name">
+                    <span id="dp"><img src="{{value.dp_path}}" alt="DP"><span id="username-post">{{value.username}}</span></span>
+                    <p id="post-text">{{value.post}} </p>
+                </div>
+                    
+                    <p id="time-stamp">Posted-on:{{value.time}}</p>
+            </div>
+                {% endif %}
                 {% endfor %}
                 {% else %}
                 <h4 style="text-align:center; font:bold; color: white; font-style: oblique; padding: 14px;">You are all Done</h4>

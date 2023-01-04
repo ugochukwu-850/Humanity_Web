@@ -46,18 +46,37 @@
         <div class="col2">
             <div class="chat-header">
                 <h4>This is the beggining of your chat with </h4>
-                <h1>@Generation-of-miracle</h1>
+                {% set usersname = username %}
+                <h1>{{username}}</h1>
             </div>
+            {% if data %}
+            {% for value in data %}
+            {% if value.posters_id == session["user_id"] %}
             <div class="messages">
-                <img src="/static/cs503.jpg" alt="" style="width:60px; border-radius:20px;">
-                <span>@Generation-of-miracle</span>
-                <p>Messages from this chat:: Babalawo lol</p>
+                <img src="{{my_path}}" alt="" style="width:60px; border-radius:20px;">
+                <span>{{value.posters_username}}</span>
+                <p>{{value.message}}</p>
             </div>
+            {% else %}
+            <div class="messages">
+                <img src="{{rec_path}}" alt="" style="width:60px; border-radius:20px;">
+                <span>{{value.rec_username}}</span>
+                <p>{{value.message}}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <h4 style="text-align: center; color:beige">Welcome to my DM :: {{username}} <br> Send your first message </h4>
+            {% endif %}
+
+            
             <div class="chatbox">
             </div>
-            <form action="#" method="post">
-                <input type="text" name="message" placeholder="hello Miracle">
+            <form action="/messages" method="post">
+                <input type="text" name="message" placeholder="Hello Miracle">
+                <input type="hidden" name="friend" value="{{usersname}}">
             </form>
+            
             <div class="footer-mess">
                 <p
                 style="display:block; text-align:center; color:darkgray; font-family:'Times New Roman', Times, serif; font-style:italic">

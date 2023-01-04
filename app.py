@@ -111,6 +111,7 @@ def index():
     user_index = 0
     for value in data:
         value["username"] = user_info[user_index]["username"]
+        value["user_id"] =  user_info[user_index]["id"]
         print(value["username"])
         
         value["dp_path"] = user_info[user_index]["dp_path"]
@@ -300,26 +301,60 @@ def profile():
     #render the template with the data_list
     return render_template("profile.html", data=data,  name=name,username=username, email=email, quote=quote, dp_path=dp_path, cp_path=coverphoto_path)
 
+
+@app.route("/comments/<post_id>", methods=["GET", "POST"])
+@login_required
+def comments(post_id):
+   if request.method == "POST":
+       #save the info in the database and  redirect to the same page with but post
+       
+       #get the text and user id through sessions and the post id too
+       comment =  request.form.get("comment")
+       commentors_id =  session["user_id"]
+       print(commentors_id)
+       posts_id = post_id
+       print(posts_id)
+       #now insert into the database 
+       db.execute("INSERT INTO comments (post_id, commentors_user_id, comment) VALUES(?,?,?)", posts_id, commentors_id, comment)
+       
+       return redirect(f"/comments/{posts_id}")
+
+   #get the posts information this would include the posters id and the posts text and image path
+   data = db.execute("SELECT * FROM posts WHERE post_id = ?", post_id)
+   users_id = data[0]["user_id"]
+    
+   #get the user that made the post and add his name and dp path the the data list dic 
+   user_info = db.execute("SELECT * FROM users WHERE id = ?", users_id)
+    
+   #add the username and image for dp path to the data dic
+   for value in data:
+       value["username"] = user_info[0]["username"]
+       value["dp_path"] = user_info[0]["dp_path"]
+    
+   #now get the username and dp_path from the users table 
+   comments_user_info =  db.execute("SELECT * FROM users JOIN comments ON comments.commentors_user_id = users.id AND comments.post_id = ?  ORDER BY comments.comment_id DESC", post_id)
+    
+   #debug
+   print(comments_user_info)
+   print(data[0]["post_id"])
+   
+   #now since we have the commentors usernames and dp_path and comments we can now render the comment html
+   return render_template("comments.html", data=data, comments=comments_user_info, post_id=data[0]["post_id"])
+   
+    
 @app.route("/notifications")
 @login_required
 def notifications():
     return render_template("notifications.html")
 
 
-@app.route("/interest")
-@login_required
-def interest():
-    return render_template("interest.html")
+#index wouldcome later
 
 @app.route("/notes")
 @login_required
 def notes():
     return render_template("notes.html")
 
-@app.route("/messages")
-@login_required
-def messages():
-    return render_template("messages.html")
 
 
 

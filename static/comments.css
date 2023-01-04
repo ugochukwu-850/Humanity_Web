@@ -305,21 +305,20 @@ img{
 td:hover{
     background-color: rgba(28, 29, 31, 0.9)
 }
-/*touches extras*/
-input[type=file]::file-selector-button {
-    margin: 5px 4px 5px 0;
-    border: 1px ridge black;
-    background: #084cdf;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #fff;
-    cursor: pointer;
-    transition: background .2s ease-in-out;
-    text-align: center;
-    font: 600;
-    display: inline-flex;
-  }
-  
-  input[type=file]::file-selector-button:hover {
-    background: #1e50a6;
-  }
+/*========the settings for the comments and commentors image */
+.comments{
+    border: 2px purple ridge;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 5px 12px;
+    border-top-left-radius: 12px;
+}
+.comments img{
+    border-radius: 12px;
+    margin: 4px;
+}
